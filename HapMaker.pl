@@ -10,7 +10,7 @@ use Bio::Seq;
 
 my $transWt = 0.5;
 my $indelVsnp = 200/7200;
-my $indelLength = 100;
+my $indelLength = 99;
 
 usage() if(@ARGV != 5);
 my $infile = shift;
