@@ -1,24 +1,7 @@
 #!/usr/bin/perl
 
-# HapMaker.pl takes as input a reference haplotype, a no-change file, and a divergence rate.  The
-# input haplotype will be the first fasta record found in the input fasta file given.  The output 
-# will be a copy of the input haplotype with changes made to the nucleotides  outside of the ranges
-# specified in the no-change file.  
-
-# The no-change file should specify numeric ranges of nucleotides (1-based) that makeHap.pl should
-# not touch when introducing variations to the output haplotype.  A range should take the form 
-# "X-Y" where X is the start  position and Y is the end position of the untouchable nucleotides.  
-# X should not be less than one, and Y should not be greater than the total length of the reference
-# haplotype.  X must always be less than Y.  If you want to specify  multiple ranges, place the 
-# ranges on separate lines.  In the case that there are multiple ranges specified, there should not
-# be any overlapping ranges (i.e. "300-400" and "350-500" cannot be in the same no-change file).
-# Note that if you want all nucleotides to be available for change, simply input a file with one
-# newline and nothing else in it.
-
-# The number of changes made is dependent on the divergence rate.  The divergence rate should be a 
-# decimal number representing the percent of nucleotides to be changed.
-
-# 22 Apr 2013 Nozomu Okuda
+# HapMaker.pl
+# 23 May 2013 Nozomu Okuda
 
 use strict;
 # use warnings;
