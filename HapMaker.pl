@@ -10,7 +10,7 @@ use Bio::Seq;
 
 my $transWt = 0.5;
 my $indelVsnp = 200/7200;
-my $indelLength = 98;
+my $indelLength = 100;
 
 usage() if(@ARGV != 5);
 my $infile = shift;
@@ -121,7 +121,8 @@ sub usage {
 
 # both introduce subroutines must introduce their respective variations to the new haplotype
 sub introduceIndel {
-	my $stretch = rand() < 0.291 ? 1 : int(rand($indelLength)) + 2;
+	my $stretch = rand() < 0.291 ? 1 : int(rand($indelLength-1)) + 2;
+    # Mills et al. (2006) suggest that 29.1% of indels are single base
 	$changeCounter -= $stretch;
 	if(rand() < 0.5) {	# insertion
 		while(1) {
